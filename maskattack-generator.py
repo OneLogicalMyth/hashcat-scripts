@@ -26,7 +26,7 @@ lines = f.readlines()
 # create mask array and store result
 for line in lines:
 	mask = []
-	tidyline = line.replace('\r\n','')
+	tidyline = line.replace('\r\n','').replace('\n','')
 	for c in tidyline:
 		mask.append(checkChar(c))
 	results.append("".join(mask))
