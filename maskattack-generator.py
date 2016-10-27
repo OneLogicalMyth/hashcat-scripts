@@ -15,8 +15,9 @@ def checkChar(char):
 
 	return "?s";
 
-# get argument from command line
+# get arguments from command line
 ifile = sys.argv[1]
+maxlen = 10 # I have limited it to 10 change to suit
 
 # try to open file and create results array
 results = []
@@ -27,11 +28,12 @@ lines = f.readlines()
 for line in lines:
 	mask = []
 	tidyline = line.replace('\r\n','').replace('\n','')
-	for c in tidyline:
-		mask.append(checkChar(c))
+	if len(tidyline) <= maxlen:
+		for c in tidyline:
+			mask.append(checkChar(c))
 	results.append("".join(mask))
 
 
 # join array and print mask to use for password
-for out in set(results):
+for out in sorted(set(results), key=len):
 	print out
