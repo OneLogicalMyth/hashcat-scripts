@@ -1,12 +1,12 @@
 # Some Thoughts
-I started this repo, purely to dump my thoughts and scripts I have built in cracking passwords.
+I started this repo, purely to dump my thoughts and scripts on cracking passwords.
 
-I tend to use 3 wordlists when cracking passwords, I run the following in order;
+I tend to use 3 wordlists when cracking passwords, I run them in the following order;
 * rockyou
 * crackstation-human-only
 * crackstation
 
-I rename the files with a 2 digit prefix, so the rockyou is renamed to **01-rockyou.txt** and so on. Then in hashcat I simply tell it to use the folder for the wordlist for example;
+I rename the files with a 2 digit prefix, so the rockyou is renamed to **01-rockyou.txt** and so on. Then in hashcat I simply tell it to use the folder;
 ```
 hashcat -m1000 -a0 -r ./rules/hob064.rule hashes-to-crack ./wordlists/
 ```
